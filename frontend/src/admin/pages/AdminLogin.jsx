@@ -16,7 +16,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const { user, loading, login, loginMockAdmin, logout } = useAuth();
+  const { user, loading, login, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -30,10 +30,7 @@ const AdminLogin = () => {
     setSubmitting(true);
 
     try {
-      const signedInUser =
-        email === "admin@riwaaz.test"
-          ? loginMockAdmin(email, password)
-          : await login(email, password);
+      const signedInUser=await login(email,password);
 
       if (!isAdmin(signedInUser)) {
         await logout();

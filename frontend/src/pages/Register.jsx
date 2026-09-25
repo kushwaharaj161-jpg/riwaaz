@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import api from "../api/axios";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -33,20 +34,9 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch(
-        "http://localhost:8080/api/auth/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await response.text();
-
-      if (response.ok) {
+      const response = await api.post("/auth/register",formData);
+      const data=response.data;
+      if (response.status===200 || response.status===201) {
         setMessage("Registration successful! Redirecting to login...");
 
         // Clear form
