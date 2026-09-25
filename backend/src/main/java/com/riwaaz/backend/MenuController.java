@@ -1,0 +1,1 @@
+package com.riwaaz.backend;import org.springframework.web.bind.annotation.*;import java.util.*;@RestController@RequestMapping("/api/menu")public class MenuController{@GetMapping public List<Map<String,Object>> g(){return List.of(Map.of("id",1,"name","Butter Chicken","price",399),Map.of("id",2,"name","Paneer Tikka","price",299));}}

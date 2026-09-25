@@ -1,0 +1,6 @@
+com\riwaaz\backend\AuthController.class
+com\riwaaz\backend\RiwaazBackendApplication.class
+com\riwaaz\backend\ContactController.class
+com\riwaaz\backend\MenuController.class
+com\riwaaz\backend\ReservationController.class
+com\riwaaz\backend\SecurityConfig.class

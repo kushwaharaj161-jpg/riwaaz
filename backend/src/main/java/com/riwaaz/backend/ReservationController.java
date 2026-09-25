@@ -1,0 +1,1 @@
+package com.riwaaz.backend;import org.springframework.web.bind.annotation.*;import java.util.*;@RestController@RequestMapping("/api/reservations")public class ReservationController{@PostMapping public Map<String,String>b(@RequestBody Map<String,String>x){return Map.of("message","Reservation booked");}}

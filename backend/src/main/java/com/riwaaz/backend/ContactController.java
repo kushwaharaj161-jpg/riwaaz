@@ -1,0 +1,1 @@
+package com.riwaaz.backend;import org.springframework.web.bind.annotation.*;import java.util.*;@RestController@RequestMapping("/api/contact")public class ContactController{@PostMapping public Map<String,String>c(@RequestBody Map<String,String>x){return Map.of("message","Message received");}}
